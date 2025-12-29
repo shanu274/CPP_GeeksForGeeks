@@ -1,0 +1,16 @@
+class Solution {
+  public:
+    // Function to sort the array in a custom pattern.
+    vector<int> customSort(vector<int>& arr) {
+        
+        int n = (int)arr.size();
+        int ans = n / 2;
+        
+        sort(arr.begin(), arr.begin() + ans);
+
+        sort(arr.begin() + ans, arr.end(), greater<int>());
+        
+        return arr;
+        
+    }
+};
