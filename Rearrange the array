@@ -1,0 +1,25 @@
+
+class Solution {
+  public:
+    void rearrangeArray(vector<int>& arr) {
+        // code here
+        int n = arr.size();
+        sort(arr.begin(), arr.end());
+        
+        int temp[n];
+        int smal = 0, lrge = n-1;
+        bool flag = true;
+        
+        for(int i = 0; i < n; i++){
+            if(flag){
+                temp[i] = arr[smal++];
+            }else{
+                temp[i] = arr[lrge--];
+            }
+                flag = !flag;
+        }
+        for(int i = 0; i < n; i++){
+                arr[i] = temp[i];
+        }
+    }
+}; 
