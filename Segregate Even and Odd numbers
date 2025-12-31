@@ -1,0 +1,15 @@
+class Solution {
+  public:
+    void segregateEvenOdd(vector<int>& arr) {
+        // code here
+        auto mid = stable_partition(arr.begin(), arr.end(),  {
+            return x % 2 == 0;
+        });
+
+        // Sort evens ascending
+        sort(arr.begin(), mid);
+        // Sort odds ascending
+        sort(mid, arr.end());
+
+    }
+};
