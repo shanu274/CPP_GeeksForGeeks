@@ -1,0 +1,19 @@
+class Solution {
+  public:
+    pair<int, int> get(int a, int b) {
+        // code here
+      /*  int c = a;  //with third variable
+        a = b;
+        b = c;
+        
+        return {a, b};*/
+        
+        
+        //without third variable
+        a = (a + b);
+        b = (a - b);
+        a = (a - b);
+        
+        return {a, b};
+    }
+};
